@@ -1,15 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Search extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-  
-      };
-    }
-  
-    render() {
-      const { value, onChange, children } = this.props;
+function Search(props) {
+      const { value, onChange, children } = props;
       return (
         <form>
           {children} <input 
@@ -18,8 +10,7 @@ class Search extends Component {
             onChange={onChange} 
           />
         </form>
-      )
-    }
-  }
+      );
+}
 
-  export default Search;
+export default Search;

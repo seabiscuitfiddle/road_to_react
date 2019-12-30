@@ -1,17 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Button from './Button.js'
 
-let isSearched = (searchTerm) => {
+function isSearched(searchTerm) {
     return (item) => item.title.toLowerCase().includes(searchTerm.toLowerCase());
-  };
-  
-class Table extends Component {
-    constructor(props) {
-      super(props);
-    }
-  
-    render() {
-      const { list, pattern, onDismiss } = this.props;
+};
+
+function Table (props) {
+      const { list, pattern, onDismiss } = props;
       return (
         <div>
           {list.filter(isSearched(pattern)).map(item => 
@@ -33,7 +28,6 @@ class Table extends Component {
           )}
         </div>
       );
-    }
-  }
+}
 
-  export default Table;
+export default Table;
