@@ -58,7 +58,8 @@ class App extends Component {
   render() {
     const {searchTerm, list} = this.state;
     return (
-      <div className="App">
+      <div className="page">
+        <div className="interactions">
         <Search 
           value={searchTerm}
           onChange={this.onSearchChange}
@@ -69,6 +70,7 @@ class App extends Component {
           pattern={searchTerm}
           onDismiss={this.onDismiss}
         />
+        </div>
       </div>);
   };
 }
