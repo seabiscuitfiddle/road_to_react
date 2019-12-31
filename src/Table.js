@@ -6,16 +6,28 @@ function isSearched(searchTerm) {
     return (item) => item.title.toLowerCase().includes(searchTerm.toLowerCase());
 };
 
+const largeColumn = {
+    width: '40%',
+};
+
+const midColumn = {
+    width: '30%',
+};
+
+const smallColumn = {
+    width: '10%',
+}
+
 const Table = ({ list, pattern, onDismiss }) =>
     <div className="table">
         {list.filter(isSearched(pattern)).map(item => 
         <div key={item.objectID} className="table-row">
-        <span style={{ width: '40%' }}>
+        <span style={largeColumn}>
             <a href={item.url}>{item.title}</a>
         </span>
-        <span style={{ width: '30%' }}>{item.author}</span>
-        <span style={{ width: '10%' }}>{item.num_comments}</span>
-        <span style={{ width: '10%' }}>{item.points}</span>
+        <span style={midColumn}>{item.author}</span>
+        <span style={smallColumn}>{item.num_comments}</span>
+        <span style={smallColumn}>{item.points}</span>
         <span>
             <Button
             onClick={() => onDismiss(item.objectID)}
